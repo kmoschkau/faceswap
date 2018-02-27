@@ -22,7 +22,7 @@ def _css_to_rect(css):
 # end of Copy/Paste
 
 class DetectedFace(object):
-    def __init__(self, image=None, x=None, w=None, y=None, h=None, landmarks=None, landmarksXY=None):
+    def __init__(self, image=None, x=None, w=None, y=None, h=None, landmarks=None, landmarksXY=None, rotation=None):
         self.image = image
         self.x = x
         self.w = w
@@ -30,6 +30,7 @@ class DetectedFace(object):
         self.h = h
         self.landmarks = landmarks
         self.landmarksXY = landmarksXY
+        self.rotation = rotation
 
     def landmarksAsXY(self):
         if self.landmarksXY:

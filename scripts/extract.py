@@ -74,7 +74,7 @@ class ExtractTrainingData(DirectoryProcessor):
         for idx, face in faces:
             count = idx
 
-            resized_image = self.extractor.extract(image, face, 256)
+            rotation, resized_image = self.extractor.extract(image, face, 256)
             output_file = get_folder(self.output_dir) / Path(filename).stem
             cv2.imwrite(str(output_file) + str(idx) + Path(filename).suffix, resized_image)
             f = {
@@ -82,7 +82,8 @@ class ExtractTrainingData(DirectoryProcessor):
                 "w": face.w,
                 "y": face.y,
                 "h": face.h,
-                "landmarksXY": face.landmarksAsXY()
+                "landmarksXY": face.landmarksAsXY(),
+                "rotation": rotation
             }
             rvals.append(f)
         return rvals

@@ -11,8 +11,8 @@ class Extract(object):
             return cv2.resize(face.image, (size, size))
 
         alignment = get_align_mat( face )
-        return self.transform( image, alignment, size, 48 )
-    
+        return alignment, self.transform( image, alignment, size, 48 )
+
     def transform( self, image, mat, size, padding=0 ):
         mat = mat * (size - 2 * padding)
         mat[:,2] += padding
