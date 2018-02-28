@@ -1,3 +1,5 @@
+https://www.deepfakes.club/deepfakes-with-amd-graphics-card/
+
 **Notice:** This repository is not operated or maintained by [/u/deepfakes](https://www.reddit.com/user/deepfakes/). Please read the explanation below for details.
 
 ---
